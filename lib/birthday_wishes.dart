@@ -32,14 +32,17 @@ class BirthdayApp extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/birthday',
-                    height: 200, width: 300, fit: BoxFit.cover),
+                Image.asset('assets/birthday.jpg',
+                    height: 600, width: 1000, fit: BoxFit.cover),
               ],
             ),
+            SizedBox(height: 40),
             ElevatedButton(onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Button Clicked')))
-            }, child: Text('Click Me'))
+                  SnackBar(content: Text('Button Clicked')));
+            }, child: Text('Click Me')),
+            SizedBox(height: 45),
+            Text('my friend!')
           ],
         ),
       ),

@@ -42,7 +42,7 @@ class MyDesignApp extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    //the snack bar is a little bar that appears and disapears after something happens
+                      //the snack bar is a little bar that appears and disapears after something happens
                       content: Text('Login successful')));
                 },
                 child: Text('Login')),
