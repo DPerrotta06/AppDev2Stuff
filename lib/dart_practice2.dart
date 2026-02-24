@@ -9,14 +9,14 @@ Map<String, int> analyzeWords(List<String> words) {
       .where((word) => word.length >= 4)
       .map((word) => word.toLowerCase())
       .forEach((word) {
-    int vowelCount = 0;
-    for (int i = 0; i < word.length; i++) {
-      if ("aieouy".contains(word[i])) {
-        vowelCount++;
-      }
-    }
-    wordMap[word] = vowelCount;
-  });
+        int vowelCount = 0;
+        for (int i = 0; i < word.length; i++) {
+          if ("aieouy".contains(word[i])) {
+            vowelCount++;
+          }
+        }
+        wordMap[word] = vowelCount;
+      });
   return wordMap;
 }
 
@@ -24,8 +24,7 @@ Stream<int> advancedStreamExample() async* {
   for (int i = 1; i <= 100; i++) {
     await Future.delayed(Duration(milliseconds: 500));
     if (i % 5 == 0 || i % 2 != 0) {
-      int
-      Function(int value) {
+      int Function(int value) {
         return (value > 100) ? value -= 50 : value *= 3;
       }
     }
@@ -48,7 +47,7 @@ List<String> modifyWords(List<String> words) {
       continue;
     }
     var transform = (String str) =>
-    (str.length % 2 == 0) ? str.toUpperCase() : str.toLowerCase();
+        (str.length % 2 == 0) ? str.toUpperCase() : str.toLowerCase();
     newList.add(transform(word));
   }
   return newList;
@@ -85,9 +84,7 @@ class Student {
 
   Student(this.name, this.age, {required this.gpa, this.major});
 
-  Student.honor(this.name, this.age)
-      : gpa = 4.0,
-        major = "Honors";
+  Student.honor(this.name, this.age) : gpa = 4.0, major = "Honors";
 
   factory Student.toMap(Map<String, dynamic> data) {
     return Student.honor(data['name'], data['age']);
@@ -119,7 +116,7 @@ Stream<String> numberStream() async* {
       continue;
     }
     var transform = (int number) =>
-    (number % 2 == 0) ? 'Even: $number' : 'Odd: $number';
+        (number % 2 == 0) ? 'Even: $number' : 'Odd: $number';
     yield transform(i);
   }
 }
@@ -146,11 +143,49 @@ Stream<String> complexNumberStream() async* {
       continue;
     }
     var transform = (int number) =>
-    (number % 2 == 0) ? 'Even: $number' : 'Odd: $number';
+        (number % 2 == 0) ? 'Even: $number' : 'Odd: $number';
     String output = transform(i);
     if (_isPrime(i)) {
       output += "-Prime";
     }
     yield output;
+  }
+}
+
+class Vehicle {
+  final String brand;
+  final int year;
+
+  Vehicle(this.brand, this.year);
+
+  String info() {
+    return 'Vehicle:\nBrand: $brand\nYear: $year';
+  }
+
+  bool isClassic() {
+    return (year > 2000) ? true : false;
+  }
+}
+
+class Car extends Vehicle {
+  final int doors;
+
+  Car(String brand, int year, this.doors) : super(brand, year);
+
+  @override
+  String info() {
+    return '${super.info()}\nNumber of doors: $doors';
+  }
+}
+
+class ElectricCar extends Car {
+  final int batteryCapacity;
+
+  ElectricCar(String brand, int year, int doors, this.batteryCapacity)
+    : super(brand, year, doors);
+
+  @override
+  String info() {
+    return '${super.info()}\nBattery Capacity: $batteryCapacity';
   }
 }
