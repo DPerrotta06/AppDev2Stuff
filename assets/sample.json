@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": "pc1",
+      "name": "mac",
+      "description": "High performance machine"
+    },
+    {
+      "id": "pc2",
+      "name": "Lenovo",
+      "description": "Multi user machine"
+    },
+    {
+      "id": "pc3",
+      "name": "Linux",
+      "description": "High security engine"
+    }
+  ]
+}
